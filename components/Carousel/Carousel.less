@@ -1,10 +1,11 @@
 .carousel {
   .width-100();
-  .flex(center, center);
+  display: flex;
   height: 500px;
   position: relative;
-  overflow: hidden;
+  overflow-x: auto;
   margin-top: 16px;
+  scroll-snap-type: x mandatory;
   @media(min-width: 1200px){
     width: 1200px;
   }
@@ -34,8 +35,19 @@
     right: 25px;
     transform: translate(0, -50%);
   }
-  img {
+
+  .photo{
+    flex-shrink: 0;
+    height: 500px;
+    width: auto;
+  }
+
+  .hidden {
+    width: 0px;
+  }
+  
+  .active{
     .width-100();
-    display: none;
+    display: block;
   }
 }
